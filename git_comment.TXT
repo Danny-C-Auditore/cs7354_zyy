@@ -1,0 +1,477 @@
+///////////////////////////////////////////////////////////////////////
+任务1
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (main)
+$ git init
+Initialized empty Git repository in D:/1-master-fall/开源/homework/sjtu-cs7354-main/.git/
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (master)
+$ git add .
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'documentation/PROJECT_OVERVIEW.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/styles.css', LF will be replaced by CRLF the next time Git touches it
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (master)
+$ git commit -m "first commit"
+[master (root-commit) b06f637] first commit
+ 8 files changed, 90 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 README.md
+ create mode 100644 backend/project.txt
+ create mode 100644 documentation/PROJECT_OVERVIEW.md
+ create mode 100644 frontend/index.html
+ create mode 100644 frontend/styles.css
+ create mode 100644 mydiary/diary.txt
+ create mode 100644 tests/node.txt
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (master)
+$ git branch -M main
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (main)
+$ git push -u origin main
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (15/15), 3.37 KiB | 1.12 MiB/s, done.
+Total 15 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Danny-C-Auditore/cs7354_zyy.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (main)
+$ git log
+commit b06f63759a89e797f013a7ad4502ef550dad266c (HEAD -> main, origin/main)
+Author: Danny-C-Auditore <1764466133@qq.com>
+Date:   Fri Nov 17 13:57:05 2023 +0800
+
+    first commit
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (main)
+$ git checkout -b feature-newFunc
+Switched to a new branch 'feature-newFunc'
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (feature-newFunc)
+$ git add mydiary/diary.txt
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (feature-newFunc)
+$ git commit -m "Added diary entry for feature work"
+[feature-newFunc 59a3277] Added diary entry for feature work
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (feature-newFunc)
+$ git add mydiary/diary.txt
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (feature-newFunc)
+$ git commit -m "Added another diary entry for feature work"
+[feature-newFunc 8195bbd] Added another diary entry for feature work
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (feature-newFunc)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (main)
+$ git merge feature-newFunc
+Updating b06f637..8195bbd
+Fast-forward
+ mydiary/diary.txt | 6 +++++-
+
+
+////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+任务2
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (main)
+$ git checkout -b experiment
+Switched to a new branch 'experiment'
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (experiment)
+$ git add tests/node.txt
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (experiment)
+$ git commit -m "Added new approach details"
+[experiment c489e6b] Added new approach details
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (main)
+$ git checkout main
+Already on 'main'
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (main)
+$ git pull origin main
+From https://github.com/Danny-C-Auditore/cs7354_zyy
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (main)
+$ git checkout experiment
+Switched to branch 'experiment'
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (experiment)
+$ git log
+commit ee606000d11211de3f5725405f5ab90712cc5947 (HEAD -> experiment)
+Author: Danny-C-Auditore <1764466133@qq.com>
+Date:   Fri Nov 17 14:22:13 2023 +0800
+
+    Added new approach details --2
+
+commit c489e6b14b692d2a3c421e4aa2985f564ea56d4e
+Author: Danny-C-Auditore <1764466133@qq.com>
+Date:   Fri Nov 17 14:21:30 2023 +0800
+
+    Added new approach details
+
+commit 8195bbd33fa1bf43cee9a09786a085f7b68e8721 (main, feature-newFunc)
+Author: Danny-C-Auditore <1764466133@qq.com>
+Date:   Fri Nov 17 14:04:17 2023 +0800
+
+    Added another diary entry for feature work
+
+commit 59a3277573a1d9239d46a67db1dc92eebd6f6635
+Author: Danny-C-Auditore <1764466133@qq.com>
+Date:   Fri Nov 17 14:03:35 2023 +0800
+
+    Added diary entry for feature work
+
+commit b06f63759a89e797f013a7ad4502ef550dad266c (origin/main)
+Author: Danny-C-Auditore <1764466133@qq.com>
+Date:   Fri Nov 17 13:57:05 2023 +0800
+
+    first commit
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (main)
+$ git cherry-pick c489e6b14b692d2a3c421e4aa2985f564ea56d4e
+[main 5e09f91] Added new approach details
+ Date: Fri Nov 17 14:21:30 2023 +0800
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (main)
+$ git log
+commit 5e09f91aec86ef89097a74d999439e9ca7a0a4e3 (HEAD -> main)
+Author: Danny-C-Auditore <1764466133@qq.com>
+Date:   Fri Nov 17 14:21:30 2023 +0800
+
+    Added new approach details
+
+commit 8195bbd33fa1bf43cee9a09786a085f7b68e8721 (feature-newFunc)
+Author: Danny-C-Auditore <1764466133@qq.com>
+Date:   Fri Nov 17 14:04:17 2023 +0800
+
+    Added another diary entry for feature work
+
+commit 59a3277573a1d9239d46a67db1dc92eebd6f6635
+Author: Danny-C-Auditore <1764466133@qq.com>
+Date:   Fri Nov 17 14:03:35 2023 +0800
+
+    Added diary entry for feature work
+
+commit b06f63759a89e797f013a7ad4502ef550dad266c (origin/main)
+Author: Danny-C-Auditore <1764466133@qq.com>
+Date:   Fri Nov 17 13:57:05 2023 +0800
+
+    first commit
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (main)
+$ git push origin main
+Enumerating objects: 17, done.
+Counting objects: 100% (17/17), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (12/12), 1.01 KiB | 1.01 MiB/s, done.
+Total 12 (delta 4), reused 0 (delta 0), pack-reused 0
+error: RPC failed; curl 28 Recv failure: Connection was reset
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+Everything up-to-date
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+任务3
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (main)
+$ git checkout -b dev
+Switched to a new branch 'dev'
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (dev)
+$ git add backend/project.txt
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (dev)
+$ git commit -m "task3-1-commit"
+[dev 784943e] task3-1-commit
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (dev)
+$ git add backend/project.txt
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (dev)
+$ git commit -m "task3-2-commit"
+[dev dca2068] task3-2-commit
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (dev)
+$ git add backend/project.txt
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (dev)
+$ git commit -m "Some content was added repeatedly"
+[dev 1b3bf98] Some content was added repeatedly
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (dev)
+$ git add backend/project.txt
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (dev)
+$ git commit -m "Mistakenly added irrelevant content"
+[dev ab6ec0b] Mistakenly added irrelevant content
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (dev)
+$ git checkout dev
+Already on 'dev'
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (dev)
+$ git log
+commit ab6ec0bdb12c1cb27a1cfad9f19da2a8db099dd7 (HEAD -> dev)
+Author: Danny-C-Auditore <1764466133@qq.com>
+Date:   Fri Nov 17 14:37:54 2023 +0800
+
+    Mistakenly added irrelevant content
+
+commit 1b3bf98b8d0ac4e5a3eab2ae2c51bc9940fa9cee
+Author: Danny-C-Auditore <1764466133@qq.com>
+Date:   Fri Nov 17 14:37:24 2023 +0800
+
+    Some content was added repeatedly
+
+commit dca206896ed4b7fd1cb53c05cbdd501030b562bd
+Author: Danny-C-Auditore <1764466133@qq.com>
+Date:   Fri Nov 17 14:36:52 2023 +0800
+
+    task3-2-commit
+
+commit 784943ef7b72fe1a3fb7b56f35030b71afd498b5
+Author: Danny-C-Auditore <1764466133@qq.com>
+Date:   Fri Nov 17 14:36:30 2023 +0800
+
+    task3-1-commit
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (dev)
+$ git reset dca206896ed4b7fd1cb53c05cbdd501030b562bd
+Unstaged changes after reset:
+M       backend/project.txt
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (dev)
+$ git commit -m "add new content 2"
+On branch dev
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   backend/project.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (dev)
+$ git push origin dev
+Enumerating objects: 27, done.
+Counting objects: 100% (27/27), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (20/20), 1.61 KiB | 550.00 KiB/s, done.
+Total 20 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), completed with 1 local object.
+remote:
+remote: Create a pull request for 'dev' on GitHub by visiting:
+remote:      https://github.com/Danny-C-Auditore/cs7354_zyy/pull/new/dev
+remote:
+To https://github.com/Danny-C-Auditore/cs7354_zyy.git
+ * [new branch]      dev -> dev
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (dev)
+$ git checkout main
+error: Your local changes to the following files would be overwritten by checkout:
+        backend/project.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (dev)
+$ git stash
+Saved working directory and index state WIP on dev: dca2068 task3-2-commit
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (dev)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+任务4
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (main)
+$ git add frontend/styles.css
+warning: in the working copy of 'frontend/styles.css', LF will be replaced by CRLF the next time Git touches it
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (main)
+$ git commit -m "css to main"
+[main a9b890c] css to main
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (main)
+$ git checkout -b feature-upload
+Switched to a new branch 'feature-upload'
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (feature-upload)
+$ git push origin feature-upload
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 387 bytes | 387.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'feature-upload' on GitHub by visiting:
+remote:      https://github.com/Danny-C-Auditore/cs7354_zyy/pull/new/feature-upload
+remote:
+To https://github.com/Danny-C-Auditore/cs7354_zyy.git
+ * [new branch]      feature-upload -> feature-upload
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (feature-upload)
+$ git diff main..feature-upload
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (feature-upload)
+$ git merge main
+Already up to date.
+
+/////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+任务5
+
+### 预先准备工作
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (feature-upload)
+$ git checkout -b documentation
+Switched to a new branch 'documentation'
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (documentation)
+$ echo "# Installation Guide" >> documentation/INSTALL_GUIDE.md
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (documentation)
+$ echo "This document provides instructions on how to install the project." >> documentation/INSTALL_GUIDE.md
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (documentation)
+$ git add documentation/INSTALL_GUIDE.md
+warning: in the working copy of 'documentation/INSTALL_GUIDE.md', LF will be replaced by CRLF the next time Git touches it
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (documentation)
+$ git commit -m "Added INSTALL_GUIDE.md for installation instructions"
+[documentation c38e4a5] Added INSTALL_GUIDE.md for installation instructions
+ 1 file changed, 2 insertions(+)
+ create mode 100644 documentation/INSTALL_GUIDE.md
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (documentation)
+$ echo "## New Features" >> documentation/PROJECT_OVERVIEW.md
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (documentation)
+$ echo "This section describes the new features added to the project." >> documentation/PROJECT_OVERVIEW.md
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (documentation)
+$ git add documentation/PROJECT_OVERVIEW.md
+warning: in the working copy of 'documentation/PROJECT_OVERVIEW.md', LF will be replaced by CRLF the next time Git touches it
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (documentation)
+$ git commit -m "Updated PROJECT_OVERVIEW.md with new feature descriptions"
+[documentation e786b2b] Updated PROJECT_OVERVIEW.md with new feature descriptions
+ 1 file changed, 2 insertions(+)
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (documentation)
+$ echo "# Contributing Guide" >> documentation/CONTRIBUTING_GUIDE.md
+echo "This document provides guidelines for contributing code to the project." >> documentation/CONTRIBUTING_GUIDE.md
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (documentation)
+$ git add documentation/CONTRIBUTING_GUIDE.md
+warning: in the working copy of 'documentation/CONTRIBUTING_GUIDE.md', LF will be replaced by CRLF the next time Git touches it
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (documentation)
+$ git commit -m "Added CONTRIBUTING_GUIDE.md for code contribution guidelines"
+[documentation 67b691f] Added CONTRIBUTING_GUIDE.md for code contribution guidelines
+ 1 file changed, 2 insertions(+)
+ create mode 100644 documentation/CONTRIBUTING_GUIDE.md
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (documentation)
+$ echo "Fixed a minor error in the document." >> documentation/PROJECT_OVERVIEW.md
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (documentation)
+$ git add documentation/PROJECT_OVERVIEW.md
+warning: in the working copy of 'documentation/PROJECT_OVERVIEW.md', LF will be replaced by CRLF the next time Git touches it
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (documentation)
+$ git commit -m "Fixed a minor error in PROJECT_OVERVIEW.md"
+[documentation fc94e5a] Fixed a minor error in PROJECT_OVERVIEW.md
+ 1 file changed, 1 insertion(+)
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (documentation)
+$ git rebase -i HEAD~4
+[detached HEAD 19dc228] Added INSTALL_GUIDE.md for installation instructions
+ Date: Fri Nov 17 15:22:33 2023 +0800
+ 2 files changed, 3 insertions(+)
+ create mode 100644 documentation/INSTALL_GUIDE.md
+Successfully rebased and updated refs/heads/documentation.
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (documentation)
+$ git push origin documentation
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (13/13), 1.45 KiB | 744.00 KiB/s, done.
+Total 13 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 1 local object.
+remote:
+remote: Create a pull request for 'documentation' on GitHub by visiting:
+remote:      https://github.com/Danny-C-Auditore/cs7354_zyy/pull/new/documentation
+remote:
+To https://github.com/Danny-C-Auditore/cs7354_zyy.git
+ * [new branch]      documentation -> documentation
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (documentation)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (main)
+$ git merge documentation
+Updating a9b890c..19dc228
+Fast-forward
+ documentation/CONTRIBUTING_GUIDE.md | 2 ++
+ documentation/INSTALL_GUIDE.md      | 2 ++
+ documentation/PROJECT_OVERVIEW.md   | 3 +++
+ 3 files changed, 7 insertions(+)
+ create mode 100644 documentation/CONTRIBUTING_GUIDE.md
+ create mode 100644 documentation/INSTALL_GUIDE.md
+
+pc@LAPTOP-1KEJ45KD MINGW64 /d/1-master-fall/开源/homework/sjtu-cs7354-main (main)
+$ git push origin main
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Danny-C-Auditore/cs7354_zyy.git
+   a9b890c..19dc228  main -> main
+
+
+
+
+
+
+
+
+
+
+
+
+
+
